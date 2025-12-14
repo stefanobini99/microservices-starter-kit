@@ -1,10 +1,10 @@
-package com.portfolio.microservices.discovery_server;
+package com.portfolio.microservices.userservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DiscoveryServerApplicationTests {
+class UserServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
