@@ -27,4 +27,16 @@ public class ProductService {
                 .map(product -> new ProductResponse(product.getId(), product.getName(), product.getDescription(), product.getPrice()))
                 .toList();
     }
+
+    public ProductResponse getProductById(Long id) {
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Product not found with id: " + id));
+
+        return new ProductResponse(
+                product.getId(),
+                product.getName(),
+                product.getDescription(),
+                product.getPrice()
+        );
+    }
 }
