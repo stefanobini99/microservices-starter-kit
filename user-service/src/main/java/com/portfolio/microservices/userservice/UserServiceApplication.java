@@ -1,4 +1,4 @@
-package com.portfolio.microservices.user_service;
+package com.portfolio.microservices.userservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

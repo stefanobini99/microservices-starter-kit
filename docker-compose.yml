@@ -1,0 +1,26 @@
+services:
+  # --- Service 1 ---
+  discovery-server:
+    build: ./discovery-server
+    container_name: discovery-server
+    ports:
+      - "8761:8761"
+    networks:
+      - microservices-net
+
+  # --- Service 2 ---
+  user-service:
+    build: ./user-service
+    container_name: user-service
+    ports:
+      - "8081:8081"   # Map local port 8081 to container port 8081
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka/
+    depends_on:
+      - discovery-server # Wait for discovery-server to start before starting this
+    networks:
+      - microservices-net
+
+networks:
+  microservices-net:
+    driver: bridge
