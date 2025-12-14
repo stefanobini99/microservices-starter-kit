@@ -21,6 +21,19 @@ services:
     networks:
       - microservices-net
 
+  # --- Service 3 ---
+  product-service:
+    build: ./product-service
+    container_name: product-service
+    ports:
+      - "8082:8082"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka/
+    depends_on:
+      - discovery-server
+    networks:
+      - microservices-net
+
 networks:
   microservices-net:
     driver: bridge
