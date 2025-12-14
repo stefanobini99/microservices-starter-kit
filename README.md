@@ -3,6 +3,8 @@
 A modern, cloud-native distributed system architecture built with **Java 21** and **Spring Boot 3.5**.
 This project demonstrates a production-ready microservices foundation featuring Service Discovery, API Gateway Routing, and Inter-service communication using OpenFeign.
 
+[![Microservices Build Pipeline](https://github.com/stefanobini99/microservices-starter-kit/actions/workflows/maven.yml/badge.svg)](https://github.com/stefanobini99/microservices-starter-kit/actions/workflows/maven.yml)
+
 ![Java](https://img.shields.io/badge/Java-21-orange?style=flat-square)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.5.8-green?style=flat-square)
 ![Spring Cloud](https://img.shields.io/badge/Spring_Cloud-2025.0.0-blue?style=flat-square)
