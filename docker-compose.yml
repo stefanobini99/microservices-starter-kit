@@ -34,6 +34,19 @@ services:
     networks:
       - microservices-net
 
+  # --- Service 4 ---
+  api-gateway:
+    build: ./api-gateway
+    container_name: api-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8761/eureka/
+    depends_on:
+      - discovery-server
+    networks:
+      - microservices-net
+
 networks:
   microservices-net:
     driver: bridge

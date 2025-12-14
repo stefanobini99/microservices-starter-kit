@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: user-service-route
+          uri: lb://user-service # 'lb' -> Load Balance/Lookup in Eureka
+          predicates:
+            - Path=/api/users/** # If the path starts with /api/users, route to user-service
+        - id: product-service-route
+          uri: lb://product-service
+          predicates:
+            - Path=/api/products/** # If the path starts with /api/products, route to product-service
+
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

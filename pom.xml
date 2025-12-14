@@ -21,6 +21,7 @@
         <module>discovery-server</module>
         <module>user-service</module>
         <module>product-service</module>
+        <module>api-gateway</module>
     </modules>
 
     <dependencyManagement>
